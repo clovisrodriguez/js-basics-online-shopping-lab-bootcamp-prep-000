@@ -18,8 +18,9 @@ function addToCart(item) {
 }
 
 function viewCart() {
+  keys = Object.keys(cart[i])
   for (let i = 0; i < cart.length; i++) {
-    console.log(`${Object.keys(cart[i])} at ${cart[i].(Object.keys(cart[i]))}`)
+    console.log(`${Object.keys(cart[i])} at ${cart[i].keys}`)
   }
 }
 
