@@ -38,6 +38,6 @@ function placeOrder(cardNumber) {
 addToCart('phone')
 addToCart('meat')
 console.log(cart[0].newItem)
-console.log(cart[newItem])
+console.log(cart[0][newItem])
 
 console.log(cart)
