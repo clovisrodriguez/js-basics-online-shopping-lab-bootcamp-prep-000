@@ -39,6 +39,6 @@ addToCart('phone')
 addToCart('meat')
 addToCart('meat1')
 console.log(Object.keys(cart[0]))
-console.log(cart[0][newItem])
+console.log(cart[0].phone)
 
 console.log(cart)
