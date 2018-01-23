@@ -34,7 +34,7 @@ function placeOrder(cardNumber) {
 
 addToCart('phone')
 addToCart('meat')
-console.log(cart[item])
+console.log(cart.item])
 console.log(cart[0])
 
 console.log(cart)
