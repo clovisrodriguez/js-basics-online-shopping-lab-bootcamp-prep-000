@@ -9,13 +9,14 @@ function setCart(c) {
   return cart;
 }
 
-let newItem = {};
-
 function addToCart(item) {
- newItem = item
- cart.push(new Object({[newItem]:Math.floor(Math.random()*100)}));
- console.log(`${item} has been added to your cart.`)
- return cart
+  const price = Math.floor(Math.random() * 100) + 1;
+
+  cart.push({ [item]: price });
+
+  console.log(`${item} has been added to your cart.`);
+
+  return cart;
 }
 
 function viewCart() {
@@ -50,22 +51,41 @@ function viewCart() {
 }
 
 function total() {
-  // write your code here
+  let t = 0;
+
+  for (let i = 0, l = cart.length; i < l; i++) {
+    for (let item in cart[i]) {
+      t += cart[i][item];
+    }
+  }
+
+  return t;
 }
 
 function removeFromCart(item) {
-  // write your code here
+  let itemInCart = false;
+
+  for (let i = 0, l = cart.length; i < l; i++) {
+    if (cart[i].hasOwnProperty(item)) {
+      itemInCart = true;
+      cart = cart.slice(0, i).concat(cart.slice(i + 1));
+      l--;
+    }
+  }
+
+  if (!itemInCart) {
+    console.log("That item is not in your cart.");
+  }
+
+  return cart;
 }
 
 function placeOrder(cardNumber) {
-  // write your code here
+  if (!cardNumber) {
+    console.log("Sorry, we don't have a credit card on file for you.");
+    return false;
+  }
+
+  console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`);
 }
-
-addToCart('phone')
-addToCart('meat')
-addToCart('meat1')
-console.log(Object.keys(cart[0]))
-console.log(cart[0].phone)
-viewCart();
-
-console.log(cart)
+  cart = [];
