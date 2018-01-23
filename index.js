@@ -21,7 +21,8 @@ function addToCart(item) {
 function viewCart() {
  
  if (cart.length === 0) {
-    console.log('Your shopping cart is empty')
+    console.log('Your shopping cart is empty.')
+    return 'Your shopping cart is empty.'
   }
   
   console.log("In your cart, you have")
@@ -29,6 +30,7 @@ function viewCart() {
     itemArray = cart[i]
     keys = Object.keys(itemArray)
     console.log(`${keys} at ${itemArray[keys]}`)
+    return `${keys} at ${itemArray[keys]}`
   }
 }
 
