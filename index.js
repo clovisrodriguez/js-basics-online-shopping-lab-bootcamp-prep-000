@@ -28,3 +28,8 @@ function removeFromCart(item) {
 function placeOrder(cardNumber) {
   // write your code here
 }
+
+addToCart('phone')
+addToCart('meat')
+
+console.log(cart)
