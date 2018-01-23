@@ -9,8 +9,11 @@ function setCart(c) {
   return cart;
 }
 
+let newItem = {};
+
 function addToCart(item) {
- cart.push(new Object({[item]:Math.floor(Math.random()*100)}));
+  newItem = item
+ cart.push(new Object({[newItem]:Math.floor(Math.random()*100)}));
  console.log(`${item} has been added to your cart.`)
 }
 
@@ -34,7 +37,7 @@ function placeOrder(cardNumber) {
 
 addToCart('phone')
 addToCart('meat')
-console.log(cart[0].phone)
+console.log(cart[0].newItem)
 console.log(cart[0])
 
 console.log(cart)
