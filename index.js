@@ -16,7 +16,7 @@ function addToCart(item) {
 
 function viewCart() {
   for (let i = 0; i < cart.length; i++) {
-    console.log(`${cart[i]} at ${cart}`)
+    console.log(`${cart[i]} at ${cart[i]}`)
   }
 }
 
@@ -34,7 +34,7 @@ function placeOrder(cardNumber) {
 
 addToCart('phone')
 addToCart('meat')
-console.log(cart[0].phone)
+console.log(cart[0].item)
 console.log(cart[0])
 
 console.log(cart)
