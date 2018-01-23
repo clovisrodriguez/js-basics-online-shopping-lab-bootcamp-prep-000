@@ -19,7 +19,7 @@ function addToCart(item) {
 
 function viewCart() {
   for (let i = 0; i < cart.length; i++) {
-    console.log(`${Object.keys(cart[i])} at ${cart[i]}`)
+    console.log(`${Object.keys(cart[i])} at ${cart[i].Object.keys(cart[i])}`)
   }
 }
 
@@ -40,5 +40,6 @@ addToCart('meat')
 addToCart('meat1')
 console.log(Object.keys(cart[0]))
 console.log(cart[0].phone)
+viewCart();
 
 console.log(cart)
