@@ -19,7 +19,7 @@ function addToCart(item) {
 
 function viewCart() {
   for (let i = 0; i < cart.length; i++) {
-    console.log(`${cart[i]} at ${cart[i]}`)
+    console.log(`${Object.keys(cart[i])} at ${cart[i]}`)
   }
 }
 
