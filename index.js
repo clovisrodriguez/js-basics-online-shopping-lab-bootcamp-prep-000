@@ -18,16 +18,16 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  if (cart = 0) {
+ 
+ /* if (cart = 0) {
     console.log('Your shopping cart is empty')
   }
-  else {
-  console.log("In your cart, you have")
+  
+  console.log("In your cart, you have") */
   for (let i = 0; i < cart.length; i++) {
     itemArray = cart[i]
     keys = Object.keys(itemArray)
     console.log(`${keys} at ${itemArray[keys]}`)
-    }
   }
 }
 
