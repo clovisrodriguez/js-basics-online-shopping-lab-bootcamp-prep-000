@@ -22,6 +22,7 @@ function viewCart() {
   for (let i = 0; i < cart.length; i++) {
     keys = Object.keys(cart[i])
     console.log(`${Object.keys(cart[i])} at ${cart[i].keys}`)
+    console.log(keys)
   }
 }
 
