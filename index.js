@@ -19,19 +19,34 @@ function addToCart(item) {
 }
 
 function viewCart() {
- 
- if (cart.length === 0) {
-    console.log('Your shopping cart is empty.')
-    return 'Your shopping cart is empty.'
+  const l = cart.length;
+
+  if (!l) {
+    return console.log("Your shopping cart is empty.");
   }
-  
-  console.log("In your cart, you have")
-  for (let i = 0; i < cart.length; i++) {
-    itemArray = cart[i]
-    keys = Object.keys(itemArray)
-    console.log(`${keys} at ${itemArray[keys]}`)
-    return `${keys} at ${itemArray[keys]}`
+
+  let itemsAndPrices = [];
+
+  for (let i = 0; i < l; i++) {
+    let itemAndPrice = cart[i];
+    let item = Object.keys(itemAndPrice)[0];
+    let price = itemAndPrice[item];
+
+    itemsAndPrices.push(`${item} at \$${price}`);
   }
+
+  switch(itemsAndPrices.length) {
+    case 1:
+      break;
+    case 2:
+      itemsAndPrices = itemsAndPrices.join(" and ");
+      break;
+    default:
+      itemsAndPrices[l-1] = "and ".concat(itemsAndPrices[l-1]);
+      itemsAndPrices = itemsAndPrices.join(", ");
+  }
+
+  console.log(`In your cart, you have ${itemsAndPrices}.`);
 }
 
 function total() {
